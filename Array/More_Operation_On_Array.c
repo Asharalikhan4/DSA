@@ -16,11 +16,23 @@ void Display(struct Array arr){
     printf("\n");
 }
 
-int Get(struct Array arr, int index){
-    
+void Get(struct Array arr, int index){
+    // Function will tell the value store at this index
+    if(index>=0 && index<arr.length){
+        printf("Value at given inedx : %d\n",arr.A[index]);
+    }
+}
+
+void Set(struct Array arr, int value, int index){
+    // this function will set the value at the given index
+    if(index>=0 && index<arr.length){
+        printf("Value at given inedx : %d\n",arr.A[index]);
+    }
 }
 
 
 int main(){
     struct Array arr = {{2,3,4,5,6},20,5};
+    Display(arr);
+    Get(arr,3);
 }
