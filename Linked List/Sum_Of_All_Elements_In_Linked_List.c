@@ -29,22 +29,23 @@ void Display(struct Node *p){
         printf("%d\n",p->data);
         p = p->next;
     }
-    printf("No of nodes in linked list: %d",count);
 }
 
-void RDisplay(struct Node *p){
-    // Display linked list using recursio
-    if(p!= NULL){
-        printf("%d\n",p->data);
-        RDisplay(p->next);
+int Sum(struct Node *p){
+    int sum = 0;
+    while (p!= 0){
+        sum += p->data;
+        p = p->next;
     }
+    return sum;
 }
+
 
 
 int main(){
     int A[] = {3,5,7,10,15};
     create(A,5);
     Display(first);
-    RDisplay(first);
+    printf("Sum of elements of linked list : %d",Sum(first));
     return 0;
 }
