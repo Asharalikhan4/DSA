@@ -30,7 +30,7 @@ void create(int A[], int n){
 
 void deleteDuplicate(struct Node *p){
     struct Node *q = p->next;
-    while(p != NULL){
+    while(q != NULL){
         if(p->data != q->data){
         p = q;
         q = q->next;
@@ -56,7 +56,6 @@ void Display(struct Node *p){
 int main(){
     int A[] = {3,5,7,7,15};
     create(A,5);
-    Display(first);
     deleteDuplicate(first);
     Display(first);
     return 0;
