@@ -32,15 +32,12 @@ void push(struct Stack *st, int data){
     }
 }
 
-int pop(struct Stack *st){
-    int popValue = -1;
-    if(st->top == -1){
-        printf("Stack is empty.\n");
+void IsFull(struct Stack st){
+    if(st.top == st.size-1){
+        printf("Stack is full!\n");
     }else{
-        popValue = st->S[st->top];
-        st->top--; 
+        printf("There are still some space in stack\n");
     }
-    return popValue;
 }
 
 int main(){
@@ -50,7 +47,6 @@ int main(){
     push(&st,20);
     push(&st,30);
     display(st);
-    printf("After popping out element. Popped element : %d\n",pop(&st));
-    display(st);
+    IsFull(st);
     return 0;
 }

@@ -32,15 +32,14 @@ void push(struct Stack *st, int data){
     }
 }
 
-int pop(struct Stack *st){
-    int popValue = -1;
-    if(st->top == -1){
-        printf("Stack is empty.\n");
-    }else{
-        popValue = st->S[st->top];
-        st->top--; 
+int peek(struct Stack st, int index){
+    // Top element is said to be first position.
+    int peekValue = -1;
+    if(st.top-index+1<0){
+        printf("Invalid Index\n");
     }
-    return popValue;
+    peekValue = st.S[st.top-index+1];
+    return peekValue;
 }
 
 int main(){
@@ -49,8 +48,6 @@ int main(){
     push(&st,10);
     push(&st,20);
     push(&st,30);
-    display(st);
-    printf("After popping out element. Popped element : %d\n",pop(&st));
-    display(st);
+    printf("Value at the given index: %d",peek(st,2));
     return 0;
 }
