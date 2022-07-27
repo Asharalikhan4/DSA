@@ -1,6 +1,8 @@
 // How to approch a problem
 
-//1.  Verify the constraints.(ask question about the question)
+
+//0. Read the question.
+//1. Verify the constraints.(ask question about the question)
 //2. Write out some test cases. 
 //3. Figure out a solution without a code.
 //4. Write out our solution in code.
