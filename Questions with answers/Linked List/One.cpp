@@ -1,172 +1,76 @@
-// Question : Given a linked list, return it in reverse.
-
-#include <bits/stdc++.h>
+// Iterative C++ program to reverse a linked list
+#include<bits/stdc++.h>
 using namespace std;
 
-class Node {
-public:
+/* Link list node */
+struct Node {
 	int data;
-	Node* next;
-	Node()
-	{
-		data = 0;
-		next = NULL;
-	}
+	struct Node* next;
 	Node(int data)
 	{
 		this->data = data;
-		this->next = NULL;
+		next = NULL;
 	}
 };
 
-class Linkedlist {
+struct LinkedList {
 	Node* head;
+	LinkedList() { head = NULL; }
 
-public:
-	Linkedlist() { head = NULL; }
-	void insertNode(int);
-	void printList();
-	void deleteNode(int);
-    void reverse();
+	/* Function to reverse the linked list */
+	void reverse()
+	{
+		// Initialize current, previous and next pointers
+		Node* current = head;
+		Node *prev = NULL, *next = NULL;
+
+		while (current != NULL) {
+			// Store next
+			next = current->next;
+			// Reverse current node's pointer
+			current->next = prev;
+			// Move pointers one position ahead.
+			prev = current;
+			current = next;
+		}
+		head = prev;
+	}
+
+	/* Function to print linked list */
+	void print()
+	{
+		struct Node* temp = head;
+		while (temp != NULL) {
+			cout << temp->data << " ";
+			temp = temp->next;
+		}
+	}
+
+	void push(int data)
+	{
+		Node* temp = new Node(data);
+		temp->next = head;
+		head = temp;
+	}
 };
-void Linkedlist::deleteNode(int nodeOffset)
-{
-	Node *temp1 = head, *temp2 = NULL;
-	int ListLen = 0;
 
-	if (head == NULL) {
-		cout << "List empty." << endl;
-		return;
-	}
-
-	// Find length of the linked-list.
-	while (temp1 != NULL) {
-		temp1 = temp1->next;
-		ListLen++;
-	}
-
-	// Check if the position to be
-	// deleted is less than the length
-	// of the linked list.
-	if (ListLen < nodeOffset) {
-		cout << "Index out of range"
-			<< endl;
-		return;
-	}
-
-	// Declare temp1
-	temp1 = head;
-
-	// Deleting the head.
-	if (nodeOffset == 1) {
-
-		// Update head
-		head = head->next;
-		delete temp1;
-		return;
-	}
-
-	// Traverse the list to
-	// find the node to be deleted.
-	while (nodeOffset-- > 1) {
-
-		// Update temp2
-		temp2 = temp1;
-
-		// Update temp1
-		temp1 = temp1->next;
-	}
-
-	// Change the next pointer
-	// of the previous node.
-	temp2->next = temp1->next;
-
-	// Delete the node
-	delete temp1;
-}
-
-// Function to insert a new node.
-void Linkedlist::insertNode(int data)
-{
-	// Create the new Node.
-	Node* newNode = new Node(data);
-
-	// Assign to head
-	if (head == NULL) {
-		head = newNode;
-		return;
-	}
-
-	// Traverse till end of list
-	Node* temp = head;
-	while (temp->next != NULL) {
-
-		// Update temp
-		temp = temp->next;
-	}
-
-	// Insert at the last.
-	temp->next = newNode;
-}
-
-// Function to print the
-// nodes of the linked list.
-void Linkedlist::printList()
-{
-	Node* temp = head;
-
-	// Check for empty list.
-	if (head == NULL) {
-		cout << "List empty" << endl;
-		return;
-	}
-
-	// Traverse the list.
-	while (temp != NULL) {
-		cout << temp->data << " ";
-		temp = temp->next;
-	}
-}
-
-
-void Linkedlist::reverse(){
-    Node* prev = NULL;
-    Node* current = head;
-    while(current != NULL){
-        Node* next = current->next;
-        current->next = prev;
-        prev = current;
-        current = next;
-    }
-}
-
-// Driver Code
+/* Driver code*/
 int main()
 {
-	Linkedlist list;
+	/* Start with the empty list */
+	LinkedList ll;
+	ll.push(20);
+	ll.push(4);
+	ll.push(15);
+	ll.push(85);
 
-	// Inserting nodes
-	list.insertNode(1);
-	list.insertNode(2);
-	list.insertNode(3);
-	list.insertNode(4);
+	cout << "Given linked list\n";
+	ll.print();
 
-	cout << "Elements of the list are: ";
+	ll.reverse();
 
-	// Print the list
-	list.printList();
-	cout << endl;
-
-	// Delete node at position 2.
-	list.deleteNode(2);
-
-	cout << "Elements of the list are: ";
-	list.printList();
-	cout << endl;
-    list.reverse();
-    cout << "Reversed Linked list: ";
-    list.printList();
-    cout << endl;
+	cout << "\nReversed Linked list \n";
+	ll.print();
 	return 0;
 }
 
