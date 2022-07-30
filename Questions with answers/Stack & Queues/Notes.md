@@ -1,0 +1,1 @@
+- Question very rarely come up as a main data structure using Stack and queues. You get question of any other data structure using in which you will use the stack and queues.
