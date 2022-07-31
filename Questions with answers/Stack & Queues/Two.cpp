@@ -3,14 +3,36 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+string minRemoveToMakeValid(string s){
+	stack<int> st;
+	for(int i = 0; i < s.size(); i++){
+		if(s[i] == '('){
+			st.push(i);
+		}else if(s[i] == ')'){
+			if(!st.empty()){
+				st.pop();
+			}else{
+				s[i] = '*';
+			}
+		}
+	}
+		while(!st.empty()){
+			s[st.top()] = '*';
+			st.pop();
+		}
+		
+		string ans = "";
+		for(int i = 0; i < s.size(); i++){
+			if(s[i] != '*'){
+				ans += s[i];
+			}
+		}
+	return ans;
+}
+
 
 int main(){
-	string s = "a)bc(cd)";
-	int n = s.length();
-	char a[n+1];
-	strcpy(a,s.c_str());
-	for(int i = 0; i < n; i++){
-		cout<<a[i]<<endl;
-	}
+	string s = ")))))(cd)";
+	cout<<minRemoveToMakeValid(s);
 	return 0;
 }
