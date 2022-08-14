@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    int n, m;
+    int n, m;       // here n is the no of nodes while the m is the no of lines.
     cin >> n >> m;
     int adj[n+1][m+1];      // declaring the adjacent matrix.
     for(int i = 0; i < m; i++){     // take edges as input.  

@@ -17,4 +17,4 @@
 # Graph representation in C++
 - There are many ways of storing the graphs.
 (i) -> Adjacency matrix.
-in this we first check the no of nodes. -> then we create a 2-D matric of node*node -> then we iterate over all the edges that is given to us. -> then we assign the value in that 2-D matrix as we found the edge between any two node. -> for code check Implementation of graph.
+in this we first check the no of nodes. -> then we create a 2-D matric of node*node -> then we iterate over all the edges that is given to us. -> then we assign the value in that 2-D matrix as we found the edge between any two node. -> for code check Implementation of graph. -> but if the values are large then we don't use the adjacency matrix then we use the adjacency list. -> in this we store the value that are connected to each other.
