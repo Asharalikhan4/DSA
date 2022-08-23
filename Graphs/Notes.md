@@ -1,3 +1,4 @@
+# Graphs
 - Graph - it is a data structure which has two components that are edges and vertices(node).
 - There are two types of graphs
 (i) Directed graphs -> in this edges have the direction.
@@ -18,6 +19,9 @@
 - There are many ways of storing the graphs.
 (i) -> Adjacency matrix.
 in this we first check the no of nodes. -> then we create a 2-D matric of node*node -> then we iterate over all the edges that is given to us. -> then we assign the value in that 2-D matrix as we found the edge between any two node. -> for code check Implementation of graph. -> but if the values are large then we don't use the adjacency matrix then we use the adjacency list. -> in this we store the value that are connected to each other.
+<<<<<<< HEAD
 
 # BFS (Breadth first search)
 - in this we first visit all the node adjacent to the first node -> then we visit the adjacent node of the adjacent node -> we take a queue then we insert the visited node and mark it in the array. -> take it out and see if there is any adjacent node of this node don't forget to delete the node when you take out the node and make sure the visted node are marked as visited.
+=======
+>>>>>>> 3699045d418f207e5d8b85552b05d9d769a5e7a8
