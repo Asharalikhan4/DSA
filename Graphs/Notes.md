@@ -1,3 +1,4 @@
+# Graphs
 - Graph - it is a data structure which has two components that are edges and vertices(node).
 - There are two types of graphs
 (i) Directed graphs -> in this edges have the direction.
