@@ -8,8 +8,8 @@ int areaOfWater(vector<int> arr){
     int ans = INT_MIN;
     for(int i = 0; i < arr.size(); i++){
         for(int j = i+1; j < arr.size(); j++){
-            if(arr[i] * arr[j] > ans){
-                ans = arr[i] * arr[j];
+            if(arr[i] > ans){
+                ans = arr[i]  arr[j];
             }
         }
     }
@@ -30,3 +30,47 @@ int main(){
 
 // here we have two for loops so time compelixity is atlest O(n^2).
 // Space complexity -> only storing the array numbers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
