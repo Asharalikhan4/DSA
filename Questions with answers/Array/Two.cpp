@@ -7,6 +7,7 @@ int areaOfWater(vector<int> &arr){
     /*
 
     // Using brute force.
+    
     int ans = INT_MIN;
     for(int i = 0; i < arr.size(); i++){
         for(int j = i+1; j < arr.size(); j++){

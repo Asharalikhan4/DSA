@@ -1,76 +1,18 @@
-// Question = You are given an array of positive integer where each integer represents the height of a vertical line on a chart. find two lines which together with the x-axis forms a container that would hold the greatest amount of water. Return area of water it would hold.
+// Question = Given an array of integers, return the indices of the two numbers that add up to a given target.
 
 #include<bits/stdc++.h>
 using namespace std;
 
-int areaOfWater(vector<int> arr){
-    // Using brute force.
-    int ans = INT_MIN;
-    for(int i = 0; i < arr.size(); i++){
-        for(int j = i+1; j < arr.size(); j++){
-            if(arr[i] > ans){
-                ans = arr[i]  arr[j];
-            }
-        }
-    }
-    return ans;
-}
-
 int main(){
-    vector<int>arr;
-    arr.push_back(1);
-    arr.push_back(8);
-    arr.push_back(6);
-    arr.push_back(2);
-    arr.push_back(9);
-    arr.push_back(4);
-    cout<<areaOfWater(arr);
+	int answer = 11;
+    vector<int>arr{1,3,7,9,2};
+    for(int i = 0; i < arr.size(); i++){
+    	for(int j = i+1; j < arr.size(); j++){
+    		if(arr[i] + arr[j] == answer){
+    			cout<<i<<" "<<j<<endl;
+    			break;
+    		}
+    	}
+    }
     return 0;
 }
-
-// here we have two for loops so time compelixity is atlest O(n^2).
-// Space complexity -> only storing the array numbers.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
