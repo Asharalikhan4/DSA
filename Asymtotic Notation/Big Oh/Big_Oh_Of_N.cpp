@@ -10,6 +10,7 @@ int main(){
     for(int i = 0; i < len; i++){
         if(num[i] == num_to_be_found){
             cout<<"Number found"<<endl;
+            break;  // to make it more efficient.
         }
     }
     return 0;
